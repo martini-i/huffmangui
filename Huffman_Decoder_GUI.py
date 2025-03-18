@@ -71,7 +71,7 @@ class HuffmanGUI:
         self.status_label.pack()
         
         compression_frame = LabelFrame(root, text="Compression Details", padx=5, pady=5)
-        compression_frame.pack(padx=10, pady=5, fill="both", expand=True)
+        compression_frame.pack(padx=10, pady=5, fill="both")
         
         self.codes_text = scrolledtext.ScrolledText(compression_frame, height=10, width=70)
         self.codes_text.pack()
@@ -83,12 +83,12 @@ class HuffmanGUI:
         self.result_text.pack()
         
         decompression_frame = LabelFrame(root, text="Decompression Details", padx=5, pady=5)
-        decompression_frame.pack(padx=10, pady=5, fill="both", expand=True)
+        decompression_frame.pack(padx=10, pady=5, fill="both")
         
         self.decompress_button = tk.Button(decompression_frame, text="🔓 Decompress File", command=self.decompress_file, state=tk.DISABLED)
         self.decompress_button.pack()
         
-        self.decoded_text = scrolledtext.ScrolledText(decompression_frame, height=5, width=70)
+        self.decoded_text = scrolledtext.ScrolledText(decompression_frame, height=8, width=70)
         self.decoded_text.pack()
         
         self.match_label = tk.Label(decompression_frame, text="", font=("Arial", 10), fg="red")
