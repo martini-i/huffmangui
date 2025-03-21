@@ -108,6 +108,7 @@ class HuffmanGUI:
          # Checks for empty
         if not text:
             messagebox.showerror("Error", "Empty file selected.")
+            self.compress_button.config(state=tk.DISABLED)
             return
         # Checks for at least 1 character
         if len(text) == 1:
@@ -160,7 +161,7 @@ class HuffmanGUI:
             original_text = original_file.read()
         # Check if decoded text matches original text
         match_status = "MATCH" if decoded_text == original_text else "DOES NOT MATCH"
-        messagebox.showinfo("Success", f"Original text and decoded text {match_status}!!!")
+        messagebox.showinfo("Success", f"Original text and decoded text {match_status}!")
         # Display decoded text and match status
         self.decoded_text.delete(1.0, tk.END)
         self.decoded_text.insert(tk.END, f"{decoded_text}\n")
