@@ -136,7 +136,7 @@ class HuffmanGUI:
         for char, code in codes.items():
             self.codes_text.insert(tk.END, f"'{char}': {code}\n")
         # Display compression details
-        self.result_text.config(text=f"Original: {original_size} bytes | Compressed: {compressed_size} bytes | Ratio: {compressed_size/original_size*100:.2f}%")
+        self.result_text.config(text=f"Original: {original_size} bytes | Compressed: {compressed_size} bytes | Ratio: {100 - (compressed_size/original_size)*100:.2f}%")
         # Progress Bar
         for i in range(101):
             self.progress_bar['value'] = i
